@@ -116,6 +116,8 @@
             $target.endX = parseInt(matrix[4]);
             $target.endY = parseInt(matrix[5]);
             
+            console.log(matrix);
+            
             var deltaX = Math.abs($target.startX - $target.endX);
             var deltaY = Math.abs($target.startY - $target.endY);
 
@@ -172,7 +174,7 @@
               }
 
               if($target.css('-webkit-transform') == 'none'){
-                $target.css('-webkit-transform', 'translate3d(0,0,0)');
+                $target.css('-webkit-transform', 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)');
               }
               
               var matrix = matrixToArray($target.css("-webkit-transform")); 
@@ -210,7 +212,13 @@
             var matrix = matrixToArray($target.css("-webkit-transform"));
             var newX = parseInt(matrix[4]) + position.x;
             var newY = parseInt(matrix[5]) + position.y;
-            $target.css('-webkit-transform', 'translate3d(' + newX + 'px,'+ newY +'px,0)');
+            
+            $target.css({
+              translateX:newX,
+              translateY:newY
+            });
+
+            //$target.css('-webkit-transform', 'translate3d(' + newX + 'px,'+ newY +'px,0)');
           },
 
           move: function(position){

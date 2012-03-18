@@ -7,8 +7,13 @@ $(document).ready(function(){
       threshold: 200,
       end: function(){
         $('.box').animate({
-          translateX:'+=150',
-        },500);    
+            translateX:'-=150',
+            translateY:'+=150',
+            scale:'+=2',
+            rotateY: '+='+(2*Math.PI),
+            rotateX: '+='+Math.PI,
+            rotateZ: '+='+Math.PI
+        },100);    
       }
     },
     left: {
