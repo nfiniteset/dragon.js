@@ -3,4 +3,4 @@ Dragon.js
 
 Drag and drop in mobile webkit.
 
-Requires jQuery.
+Requires jQuery and TransformJS.
