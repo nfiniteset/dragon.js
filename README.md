@@ -10,7 +10,7 @@ Installation
 ------------
 
 Include src/dragon.js in your page.
-Don't forget jQUery and Transform.js as well.
+Don't forget [jQuery](http://jquery.com/) and [Transform.js](http://transformjs.strobeapp.com/) as well.
 
 
 Running the specs
