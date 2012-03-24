@@ -116,12 +116,12 @@
             $target.endX = parseInt(matrix[4]);
             $target.endY = parseInt(matrix[5]);
             
-            console.log(matrix);
+            helpers.log(matrix);
             
             var deltaX = Math.abs($target.startX - $target.endX);
             var deltaY = Math.abs($target.startY - $target.endY);
 
-            console.log("x=" + deltaX + " " + "y=" + deltaY);
+            helpers.log("x=" + deltaX + " " + "y=" + deltaY);
             
             if (typeof $.fn.dragon.settings[drag.direction].end !== "undefined"){
               switch(drag.direction) 
@@ -164,11 +164,11 @@
               drag.direction = helpers.getDirection(drag.startInputX, drag.startInputY, drag.lastInputX, drag.lastInputY);
                             
               if (drag.direction != null){
-                  console.log(drag.direction);
-                  console.log("t=" + $.fn.dragon.settings[drag.direction].target);
-                  console.log($target);
+                  helpers.log(drag.direction);
+                  helpers.log("t=" + $.fn.dragon.settings[drag.direction].target);
+                  helpers.log($target);
                   if (typeof $.fn.dragon.settings[drag.direction].target !== "undefined") {
-                    console.log($.fn.dragon.settings[drag.direction].target);
+                    helpers.log($.fn.dragon.settings[drag.direction].target);
                     $target = $.fn.dragon.settings[drag.direction].target;
                   }
               }
@@ -251,6 +251,13 @@
             var angle = Math.atan2(lastY - startY, lastX - startX);
             var degree = angle * 180/Math.PI;    
             return degree;
+          },
+          
+          log: function(message){
+            LOG_ENABLED = false;
+            if (LOG_ENABLED){
+              console.log(message);
+            }
           }
 
         }
