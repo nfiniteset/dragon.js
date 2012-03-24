@@ -1,0 +1,15 @@
+src_files:
+    - vendor/jquery-1.6.2.min.js
+    - vendor/transform.js
+    - src/dragon.js
+
+stylesheets:
+
+helpers:
+  - helpers/**/*.js
+
+spec_files:
+
+src_dir:
+
+spec_dir:
