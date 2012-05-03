@@ -24,7 +24,7 @@ describe("Dragon.js", function(){
       this.circle_id = this.circle_el.data('dragon_id');
     });
 
-    it("can configure multiple elements", function(){
+    it("each is configured independantly", function(){
       console.log(this.square_el.dragon.settings);
       expect(this.square_el.dragon.settings[this.square_id].horizontal).toBe(true);
       expect(this.square_el.dragon.settings[this.square_id].vertical).toBe(false);
