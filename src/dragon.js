@@ -9,7 +9,6 @@
     var id = 0;
     $.fn.dragon = function(method) {
 
-        var drag = {};
         // Determine if device is a touch device
         var isTouchDevice = function() {
           var el = document.createElement('div');
@@ -95,7 +94,7 @@
               $target = $element;
             }
 
-            drag = {
+            var drag = {
               startInputX: inputX(event),
               startInputY: inputY(event),
               lastInputX: inputX(event),
@@ -233,7 +232,7 @@
               var diffX = lastX - startX;
               var diffY = lastY - startY;
               if(diffX > 2 || diffX < -2 || diffY > 2 || diffY < -2){
-                var angle = getAngle(startX, startY, lastX,lastY);
+                var angle = getAngle(startX, startY, lastX, lastY);
                 if (angle <= -30 && angle >= -150){
                   return 'up';
                 }
